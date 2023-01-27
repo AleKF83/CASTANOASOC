@@ -2,8 +2,8 @@
 .navbar {
   padding: 1rem;
   background: rgb(08, 29, 66);
-    position: sticky; /* Posicionamos el elemento con el valor sticky */
-    top: 0; 
+  position: sticky; /* Posicionamos el elemento con el valor sticky */
+  top: 0; 
 
 }
 
@@ -13,7 +13,7 @@
 
 }
 .navbar-light .navbar-toggler {
-    border-color: white ;
+  border-color: white ;
 }
 
 .navbar-light .navbar-toggler  .navbar-toggler-icon {
@@ -23,10 +23,6 @@
   color: white;
 
 }
-/* 
-.div-principal {
-  padding: 10% 0;
-} */
 
 .div-principal h2 {
   font-size: 1.5rem;
@@ -68,11 +64,13 @@ h2 {
   justify-content: left;
 }
 
+.seccion-texto:first-letter {
+	margin-left: 25px;
+}
+
 .seccion-oscura {
   color: white;
   background-color: rgb(08, 29, 66);
-  /* background: linear-gradient(70deg, rgb(08, 29, 66), rgb(72, 90, 192)); */
-
 }
 
 .imagen-principal {
@@ -95,6 +93,7 @@ h2 {
   height: 75%;
   padding: 10% 0;
 }
+
 
 .quienes-somos .contenedor {
   max-width: 1000px;
@@ -127,7 +126,7 @@ h2 {
   max-width: 1100px;
   min-height: 200px;
   padding: 2% 0;
-margin: 5px;
+  margin: 5px;
 }
 
 .contacto .rectangulo {
