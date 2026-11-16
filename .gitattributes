@@ -1,0 +1,5 @@
+# Fin de línea fijo: la política de seguridad (CSP) del 404 lleva la huella exacta de su <style>;
+# si Windows le cambia los fines de línea, la huella no coincide y el 404 queda sin estilo.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
