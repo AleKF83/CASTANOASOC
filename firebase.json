@@ -4,6 +4,7 @@
     "ignore": [
       "firebase.json",
       "ESTADO.md",
+      "*.bat",
       "README.md",
       "**/.*",
       "**/node_modules/**"
