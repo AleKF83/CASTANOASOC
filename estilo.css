@@ -1,245 +1,96 @@
-/* BARRA DE NAVEGACION */
-.navbar {
-  padding: 1rem;
-  background: rgb(08, 29, 66);
-  position: sticky; /* Posicionamos el elemento con el valor sticky */
-  top: 0; 
+/* Estudio Jurídico Castaño & Asociados — colores tomados del logo */
+:root{--azul:#0f2346;--azul2:#16305c;--oro:#c3b38f;--oro2:#8f7d55;--tinta:#1c2333;--gris:#5b6475;--fondo:#f6f4ef}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--tinta);background:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
 
+/* Barra superior */
+header{position:sticky;top:0;z-index:10;background:var(--azul);color:#fff;border-bottom:1px solid rgba(195,179,143,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.35rem;font-weight:700;letter-spacing:.3px}
+.marca img{width:40px;height:40px;border-radius:6px}
+header nav{display:flex;gap:28px;font-size:.92rem}
+header nav a{opacity:.85}
+header nav a:hover{opacity:1;color:var(--oro)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:6px;font-weight:600;font-size:.95rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.btn-oro{background:var(--oro);color:var(--azul)}
+.btn-linea{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+header .btn{padding:9px 16px;font-size:.88rem}
+
+/* Portada */
+.hero{background:linear-gradient(135deg,var(--azul) 0%,var(--azul2) 100%);color:#fff;padding:84px 0 92px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.eyebrow{color:var(--oro);letter-spacing:3px;font-size:.78rem;font-weight:600;text-transform:uppercase}
+.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:3.4rem;line-height:1.08;margin:14px 0 20px;font-weight:700}
+.hero p{font-size:1.08rem;opacity:.88;max-width:520px}
+.acciones{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero img{width:100%;max-width:420px;justify-self:end;border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+
+/* Secciones */
+section{padding:88px 0}
+.titulo{text-align:center;margin-bottom:48px}
+.titulo h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.5rem;color:var(--azul);margin-top:8px;line-height:1.15}
+.titulo .eyebrow{color:var(--oro2)}
+
+/* Servicios */
+.servicios{background:var(--fondo)}
+.grilla{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #e7e2d6;border-radius:12px;padding:30px 28px;display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s}
+.card:hover{border-color:var(--oro);box-shadow:0 12px 28px rgba(15,35,70,.08)}
+.card .ico{font-size:1.7rem;color:var(--oro2);background:#f3efe4;width:54px;height:54px;border-radius:10px;display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-size:1.15rem;color:var(--azul);margin-bottom:6px}
+.card p{color:var(--gris);font-size:.94rem}
+.card ul{color:var(--gris);font-size:.9rem;margin:6px 0 0 18px}
+.card .mas{margin-top:auto;padding-top:18px;color:var(--azul);font-weight:600;font-size:.9rem}
+.card .mas:hover{color:var(--oro2)}
+
+/* El estudio */
+.estudio .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.estudio img{width:100%;border-radius:14px}
+.estudio h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.5rem;color:var(--azul);margin:8px 0 18px}
+.estudio p{color:var(--gris);margin-bottom:14px}
+.estudio .eyebrow{color:var(--oro2)}
+
+/* Contacto */
+.contacto{background:var(--azul);color:#fff}
+.contacto .titulo h2{color:#fff}
+.contacto .titulo .eyebrow{color:var(--oro)}
+.canales{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.canal{border:1px solid rgba(195,179,143,.35);border-radius:12px;padding:26px;text-align:center;transition:background .15s}
+.canal:hover{background:rgba(255,255,255,.05)}
+.canal i{font-size:1.8rem;color:var(--oro)}
+.canal b{display:block;margin:10px 0 2px}
+.canal span{opacity:.75;font-size:.9rem;word-break:break-word}
+
+footer{background:#0a1932;color:rgba(255,255,255,.55);text-align:center;font-size:.85rem;padding:26px 20px}
+
+/* Botón flotante de WhatsApp */
+.wsp{position:fixed;right:22px;bottom:22px;z-index:20;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.8rem;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+
+@media (max-width:860px){
+  header nav{display:none}
+  header .btn span{display:none}
+  .hero{padding:52px 0 60px}
+  .hero .wrap,.estudio .wrap{grid-template-columns:1fr;gap:36px}
+  .hero h1{font-size:2.4rem}
+  .hero img{justify-self:center;max-width:300px}
+  .grilla{grid-template-columns:1fr}
+  .canales{grid-template-columns:1fr 1fr}
+  section{padding:60px 0}
+  .titulo h2,.estudio h2{font-size:2rem}
 }
-
-.navbar-collapse {
-  align-items: center;
-  justify-content: space-between;
-
+@media (max-width:560px){
+  .canales{grid-template-columns:1fr;gap:12px}
+  .canal{display:flex;align-items:center;gap:16px;text-align:left;padding:16px 20px}
+  .canal b{margin:0}
+  .canal span{display:block}
 }
-.navbar-light .navbar-toggler {
-  border-color: white ;
-}
-
-.navbar-light .navbar-toggler  .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-.nav-link {
-  color: white;
-
-}
-
-.div-principal h2 {
-  font-size: 1.5rem;
-  color: #615151;
-
-}
-
-
-/* estilos generales */
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Times New Roman', Times, serif;
-  justify-content: center;
-  padding: 75px 10px 10px 10px;
-}
-h1 {
-  font-size: 2.5rem;
-  font-family: sans-serif;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.seccion-titulo {
-  font-size: 2rem;
-  padding: 15px 0;
-  justify-content: center;
-  font-family: sans-serif;
-}
-
-.seccion-texto {
-  font-size: 1.2rem;
-  justify-content: left;
-}
-
-.seccion-texto:first-letter {
-	margin-left: 25px;
-}
-
-.seccion-oscura {
-  color: white;
-  background-color: rgb(08, 29, 66);
-}
-
-.imagen-principal {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  margin: 20px;
-
-}
-
-
-/* seccion principal */
-.principal {
-  background-color: white;
-  min-height: 450px;
-  text-align: center;
-  padding: 85px 10px 10px 10px;
-}
-
-/* Quienes somos */
-.quienes-somos {
-  height: 75%;
-  padding: 0px 10px;
-}
-
-
-.quienes-somos .contenedor {
-  max-width: 1000px;
-  text-align:justify;
-  padding: 10% 0;
-}
-
-.clearfix{
-  padding: 25px;
-}
-.servicio {
-  padding: 85px 10px 10px 10px;
-}
-
-.servicio .columna {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.2 ease-in;
-  overflow: hidden;
-  
-}
-
-.servicio .columna:hover {
-  /* background-color: rgb(08, 29, 66); */
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-
-}
-
-.contacto .contenedor {
-  max-width: 1100px;
-  min-height: 200px;
-  padding: 1% 0;
-  margin: 5px;
-}
-
-.contacto .rectangulo {
-  margin-top: 2rem;
-  /* background-color: rgb(13,110,253); */
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 1px white;
-  
-}
-
-.contacto .row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-
-}
-
-.contacto .descripcion {
-  color: white;
-  font-size: 1.2rem;
-}
-
-.contacto button {
-  color: white;
-  font-weight: bold;
-  background-color: transparent;
-  border: 2px solid white;
-  padding: 1.25em 2em;
-  margin: 10px;
-  border-radius: 100px;
-  transition: all 0.2s ease-in-out;
-}
-
-.contacto button:hover {
-  background-color: white;
-  color: black;
-
-}
-
-.contacto button i {
-  color: white;
-  font-size: 1.3rem;
-  transition: all 0.2s ease-in-out;
-
-}
-
-.contacto button:hover i {
-  color: black;
-
-}
-
-footer {
-  min-height: 200px;
-  
-}
-
-.footer-texto {
-  font-size: 1.5rem;
-  padding: 20px;
-  margin-bottom: 30px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.iconos-redes-sociales a {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-  margin: 10px;
-  border: 2px solid white;
-  border-radius: 50%;
-  transition: all 0.2s ease-in;
-}
-
-.iconos-redes-sociales i {
-  color: white;
-  font-size: 1.5rem;
-  transition: all 0.2s ease-in;
-}
-
-.iconos-redes-sociales a:hover {
-  background-color: white;
-  border: 2px solid rgb(13, 110, 253);
-}
-
-.iconos-redes-sociales a:hover i {
-  color: black;
-}
-
-.derechos-de-autor {
-  font-size: 15px;
-  color: #aeaeae;
-  /* padding: 10% 0 ; */
-}
-
-/* responsive */
-@media screen and (max-width:767px) {
-  .navbar-brand {
-    display: none;
-    /* desaparece el logo */
-    
-  }
-
-}
-
-@media screen and (min-width:700px) {
-  .div-secundario-imagen {
-    max-width: 600px;
-  }
+@media (max-width:400px){
+  .marca{font-size:1.15rem}
 }
